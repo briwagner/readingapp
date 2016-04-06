@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    <% @users.each do |u| %>
+      <li><%= link_to "#{u.username}", user_path(u) %></li>
+        <ul>
+          <% u.books.each do |b| %>
+            <li><%= link_to "#{b.title}",  %></li>
+          <% end %>
+        </ul>
+    <% end %>
+  </ul>
+</div>

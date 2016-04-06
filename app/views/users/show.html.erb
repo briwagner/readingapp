@@ -1,0 +1,23 @@
+<div>
+  <h2><%= @user.username %></h2>
+</div>
+
+<div>
+  <h3>Your Books</h3>
+
+  <% if @user.books.any? %>
+    <ul>
+      <% @user.books.each do |b| %>
+        <li><h4><%= b.title %></h4>
+          <p><%= link_to 'Read it!', new_user_book_reading_path(@user, b) %></p>
+          <p><%= b.pagecount %> pages</p>
+          <p><%= link_to 'Details', user_book_path(@user, b) %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p><em>No books on your reading list yet.</em></p>
+  <% end %>
+
+  <%= link_to "Add a book", new_user_book_path(@user, @book) %>
+</div>

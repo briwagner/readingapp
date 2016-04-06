@@ -1,0 +1,10 @@
+<div>
+  <h4>Reading <%= @reading.book.title %></h4>
+  <p>Page <%= @reading.startpage %> to <%= @reading.endpage ? @reading.endpage : '...' %></p>
+  <p><%= @reading.starttime.strftime("%k:%M") %> to <%= @reading.endtime ? @reading.endtime.strftime("%k:%M") : '...' %></p>
+  <p><%= @reading.duration_minutes %> minutes</p>
+</div>
+
+<div>
+  <%= link_to "Edit", edit_user_book_reading_path(@user, @book, @reading) %>
+</div>

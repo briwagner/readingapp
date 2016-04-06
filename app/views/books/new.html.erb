@@ -1,0 +1,10 @@
+<div>
+  <h3>Add a book</h3>
+
+  <%= form_for [@user, @book] do |f| %>
+    <%= f.text_field :title, placeholder: 'Title' %>
+    <%= f.number_field :pagecount, placeholder: 'Total pages' %>
+    <%= submit_tag 'Add new book' %>
+  <% end %>
+
+</div>

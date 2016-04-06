@@ -1,0 +1,18 @@
+<div>
+  <h2><%= @book.title %></h2>
+
+  <p><%= @book.pagecount %> pages</p>
+
+  <% if @book.description %>
+    <p><%= @book.description %></p>
+  <% end %>
+
+  <% if @book.readings.any? %>
+    <% @book.readings.each do |r| %>
+      <p><%= r.startpage %></p>
+    <% end %>
+  <% else %>
+    <p><em>You haven't started reading this book yet?</em></p>
+    <p><%= link_to 'Start reading?', new_user_book_reading_path(@user, @book) %></p>
+  <% end %>
+</div>

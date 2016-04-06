@@ -1,0 +1,12 @@
+<div>
+  <p>Edit this reading entry</p>
+  <%= form_for [@user, @book, @reading] do |f| %>
+    <%= f.number_field :startpage, placeholder: "Starting page" %>
+    <%= f.label :starttime, 'Start time' %>
+    <%= f.datetime_select :starttime, {}, class: '' %>
+    <%= f.number_field :endpage, placeholder: "Last page read" %>
+    <%= f.label :endtime, 'Finish time' %>
+    <%= f.datetime_select :endtime, {}, class: '' %>
+    <%= submit_tag 'Finish reading' %>
+  <% end %>
+</div>
