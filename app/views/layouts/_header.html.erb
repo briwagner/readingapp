@@ -1,10 +1,15 @@
 <nav>
   <ul>
     <li><%= link_to 'Home', root_path %></li>
-    <li>My books</li>
-    <li>Continue reading</li>
-    <li>Log in</li>
-    <li>Log out</li>
-    <li><%= link_to 'New Reader', new_user_path %></li>
+    <% if session[:user_id] %>
+      <li><%= link_to 'My books', user_path(User.find(session[:user_id])) %></li>
+      <!-- <li>
+        <%= link_to 'Continue reading', root_path %>
+       </li> -->
+      <li><%= link_to 'Log out', session_logout_path %></li>
+    <% else %>
+      <li><%= link_to 'Log in', session_path %></li>
+      <li><%= link_to 'New Reader', new_user_path %></li>
+    <% end %>
   </ul>
 </nav>

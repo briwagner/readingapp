@@ -7,7 +7,7 @@
             <% u.books.each do |b| %>
               <li><%= link_to "#{b.title}", user_book_path(u, b) %>
                 <% if b.readings.any? && b.current_reading %>
-                  <%= link_to "Finish reading", edit_user_book_reading_path(u, b, b.current_reading.first) %>
+                  <%= link_to "Finish reading", edit_user_book_reading_path(u, b, b.current_reading.first), class: 'btn link-btn marg-left' %>
                 <% end %>
               </li>
             <% end %>

@@ -1,7 +1,8 @@
 <div class="box session">
   <h3>Who's reading today?</h3>
-  <%= form_for @session do |f| %>
-    <%= f.textarea :username %>
-    <%= submit_tag "Log in" %>
-  <% end %>
+  <ul>
+    <% @users.each do |u| %>
+      <li><a href="/session/<%= u.id %>"><%= u.username %></a></li>
+    <% end %>
+  </ul>
 </div>

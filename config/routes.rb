@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   root 'users#index'
 
   get 'session' => 'sessions#index'
+  get 'session/logout' => 'sessions#destroy', as: 'session_logout'
+  get 'session/:id' => 'sessions#create', as: 'session_login'
+
+  # post 'session' => 'sessions#create', as: 'new_session'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

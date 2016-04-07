@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
 
-  has_many :books, :sessions
+  has_many :books
+  has_many :sessions
 
   def current_book
     self.books.each { |b| b if b.current_reading}

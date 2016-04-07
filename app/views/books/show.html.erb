@@ -13,7 +13,7 @@
     <h4>Readings</h4>
     <% @book.readings.sort { |a,b| b.startpage <=> a.startpage }.each do |r| %>
       <% if r.open_reading? %>
-        <p><%= r.startpage %> ... <%= link_to "Finish reading", edit_user_book_reading_path(@user, @book, r) %></p>
+        <p><%= r.startpage %> ... <%= link_to "Finish reading", edit_user_book_reading_path(@user, @book, r), class: 'btn link-btn' %></p>
       <% else %>
         <p><%= r.endpage - r.startpage %> pages read on <%= r.endtime.strftime("%b. %e") %> - p. <%= r.endpage %> <%= link_to "Edit", edit_user_book_reading_path(@user, @book, r), class: "btn link-btn marg-left" %></p>
       <% end %>

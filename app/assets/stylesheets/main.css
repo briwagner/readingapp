@@ -83,12 +83,12 @@ input, label, textarea {
   box-shadow:  1px 1px 1px white inset, 0px 0px 5px saddlebrown;
 }
 
-.user-list h3, .session h3 {
+.user-list h3, .session h3, .new-book h3 {
   padding: 5px 15px;
   background-color: saddlebrown;
 }
 
-.session h3 {
+.session h3, .new-book h3 {
   color:white;
 }
 
