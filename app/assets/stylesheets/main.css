@@ -1,0 +1,145 @@
+body {
+  background-color: antiquewhite;
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+nav {
+  background-color: saddlebrown;
+  border-bottom: 4px solid #70380f;
+}
+
+nav ul {
+  padding: 10px 0 10px 15px;
+  margin: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 15px;
+  padding: 15px 25px;
+  background-color: #70380f;
+  font-size: 1.5em;
+  border-radius: 2px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+input, label, textarea {
+  display:block;
+  font-size: 1.3em;
+  margin: 15px 0;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+.box {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.container {
+  padding-top: 15px;
+}
+
+.btn {
+  line-height: 2em;
+  border-radius: 2px;
+  background-color: white;
+  color: saddlebrown;
+  border: 1px solid #70380f;
+}
+
+.btn:hover {
+  box-shadow:  1px 1px 2px saddlebrown inset;
+}
+
+.link-btn {
+  padding: 5px 15px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.reverse-btn {
+  color:white;
+  background-color: saddlebrown;
+}
+
+.reverse-btn:hover {
+  box-shadow:  1px 1px 1px white inset, 0px 0px 5px saddlebrown;
+}
+
+.user-list h3, .session h3 {
+  padding: 5px 15px;
+  background-color: saddlebrown;
+}
+
+.session h3 {
+  color:white;
+}
+
+.user-list h3 a {
+  text-decoration: none;
+  color:white;
+  letter-spacing: .2em;
+}
+
+.user-list h3 a:hover {
+  text-shadow: 5px 1px 2px purple
+}
+
+.user-list ul li {
+  list-style-type: none;
+  padding: 5px 0;
+}
+
+.user-list ul li a {
+  color: saddlebrown;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.user-list p {
+  color: saddlebrown;
+  margin-left: 40px;
+}
+
+.book h2, .user h2 {
+  background-color: saddlebrown;
+  color:white;
+}
+
+.user ul h4 {
+  margin: 5px 0;
+}
+
+.user ul li {
+  list-style-type: none;
+  padding:5px 0;
+}
+
+.user ul li h4 {
+  margin-bottom: 5px;
+}
+
+.top-m-40 {
+  margin-top: 40px;
+}
+
+.marg-left {
+  margin-left: 20px;
+}

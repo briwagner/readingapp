@@ -3,7 +3,7 @@ class Reading < ActiveRecord::Base
   belongs_to :book
 
   def open_reading?
-    self.endtime
+    self.endtime.nil?
   end
 
   def duration_minutes

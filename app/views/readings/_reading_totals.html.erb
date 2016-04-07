@@ -1,0 +1,5 @@
+  <p>Page <%= @reading.startpage %> to <%= @reading.endpage ? @reading.endpage : '...' %></p>
+  <p><%= @reading.starttime.strftime("%k:%M") %> to <%= @reading.endtime ? @reading.endtime.strftime("%k:%M") : '...' %></p>
+  <% if @reading.endpage %>
+    <p>You read <%= @reading.endpage - @reading.startpage %> pages in <%= @reading.duration_minutes %> minutes</p>
+  <% end %>

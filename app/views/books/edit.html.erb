@@ -1,0 +1,11 @@
+<div class="box">
+  <%= form_for [@user, @book] do |f| %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, placeholder: 'Title' %>
+    <%= f.label :pagecount, "Total pages:" %>
+    <%= f.number_field :pagecount, placeholder: 'Total pages' %>
+    <%= f.label :description, "Description:" %>
+    <%= f.text_area :description, rows: "4", class: "description-field" %>
+    <%= submit_tag 'Edit book', class: 'btn' %>
+  <% end %>
+</div>

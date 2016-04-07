@@ -1,23 +1,26 @@
-<div>
-  <h2><%= @user.username %></h2>
-</div>
+<div class="box user">
+  <h2 class="centered"><%= @user.username %></h2>
 
-<div>
   <h3>Your Books</h3>
 
   <% if @user.books.any? %>
     <ul>
       <% @user.books.each do |b| %>
-        <li><h4><%= b.title %></h4>
-          <p><%= link_to 'Read it!', new_user_book_reading_path(@user, b) %></p>
-          <p><%= b.pagecount %> pages</p>
-          <p><%= link_to 'Details', user_book_path(@user, b) %></p>
-        </li>
+        <h4><%= link_to "#{b.title}", user_book_path(@user, b) %> - <%= b.pagecount %> pages</h4>
+        <% if b.readings.any? %>
+          <li>Last page read: <%= b.last_page_read %></li>
+        <% else %>
+          <li>Start reading!</li>
+        <% end %>
+        <% unless b.last_page_read == b.pagecount %>
+          <li><%= link_to 'Read it!', new_user_book_reading_path(@user, b), class: 'btn link-btn' %></li>
+        <% end %>
       <% end %>
     </ul>
   <% else %>
     <p><em>No books on your reading list yet.</em></p>
   <% end %>
-
-  <%= link_to "Add a book", new_user_book_path(@user, @book) %>
+  <div class="centered top-m-40">
+    <%= link_to "Add a book", new_user_book_path(@user, @book), class: 'btn link-btn reverse-btn' %>
+  </div>
 </div>

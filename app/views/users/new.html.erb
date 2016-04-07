@@ -1,6 +1,6 @@
-<div>
+<div class="box centered">
   <%= form_for @user do |f| %>
     <%= f.text_field :username, placeholder: 'Name' %>
-    <%= submit_tag 'New User' %>
+    <%= submit_tag 'New User', class: 'btn' %>
   <% end %>
 </div>

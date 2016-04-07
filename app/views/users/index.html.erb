@@ -1,12 +1,20 @@
-<div>
-  <ul>
+<div class="box">
     <% @users.each do |u| %>
-      <li><%= link_to "#{u.username}", user_path(u) %></li>
-        <ul>
-          <% u.books.each do |b| %>
-            <li><%= link_to "#{b.title}",  %></li>
-          <% end %>
-        </ul>
+      <div class="user-list">
+        <h3><%= link_to "#{u.username.upcase}", user_path(u) %></h3>
+        <% if u.books.any? %>
+          <ul>
+            <% u.books.each do |b| %>
+              <li><%= link_to "#{b.title}", user_book_path(u, b) %>
+                <% if b.readings.any? && b.current_reading %>
+                  <%= link_to "Finish reading", edit_user_book_reading_path(u, b, b.current_reading.first) %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p><em>No books yet</em></p>
+        <% end %>
+      </div>
     <% end %>
-  </ul>
 </div>
