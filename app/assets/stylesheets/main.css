@@ -176,3 +176,10 @@ input, label, textarea {
 .log-in-list img {
   margin-right: 10px;
 }
+
+/*footer*/
+
+footer {
+  padding: 35px;
+  color: saddlebrown;
+}
