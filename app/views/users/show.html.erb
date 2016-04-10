@@ -1,5 +1,6 @@
 <div class="box user">
   <h2 class="centered"><%= @user.username %></h2>
+  <p class="centered"><img src="/images/<%= @user.imageURL ? @user.imageURL : 'anonymous_static.png' %>" class="user-image" alt="<%= @user.username %> image"></p>
 
   <h3>Your Books</h3>
 

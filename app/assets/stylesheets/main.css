@@ -143,3 +143,36 @@ input, label, textarea {
 .marg-left {
   margin-left: 20px;
 }
+
+.user-image {
+  max-width: 140px;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.no-list {
+  padding-left: 0
+}
+
+.no-list li {
+  list-style-type: none;
+}
+
+.log-in-list {
+  text-decoration: none;
+  color: saddlebrown;
+  font-weight: 700;
+}
+
+.log-in-list li {
+  padding: 10px;
+}
+
+.log-in-list li:hover {
+  background-color: rgba(247, 221, 187, 0.5)
+}
+
+.log-in-list img {
+  margin-right: 10px;
+}

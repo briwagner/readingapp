@@ -1,8 +1,11 @@
 <div class="box session">
   <h3>Who's reading today?</h3>
-  <ul>
+  <ul class="no-list">
     <% @users.each do |u| %>
-      <li><a href="/session/<%= u.id %>"><%= u.username %></a></li>
+      <a href="/session/<%= u.id %>" class="log-in-list"><li>
+      <img src="/images/<%= u.imageURL ? u.imageURL : 'anonymous_static.png' %>" alt="<%= u.imageURL ? u.username : 'anonymous user' %> image" class="user-image">
+        <%= u.username %>
+      </li></a>
     <% end %>
   </ul>
 </div>
