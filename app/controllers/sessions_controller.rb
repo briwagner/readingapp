@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user = User.find(params[:id])
+      Session.create(user_id: @user.id)
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
