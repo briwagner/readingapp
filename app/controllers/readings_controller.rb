@@ -16,8 +16,8 @@ class ReadingsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @book = Book.find(params[:book_id])
-    @reading = Reading.new(reading_params)
-    if @book.readings << @reading
+    @reading = @book.readings.new(reading_params)
+    if @reading.save
       flash[:notice] = "Saved. Now start reading!"
       redirect_to user_book_reading_path(@user, @book, @reading)
     else
