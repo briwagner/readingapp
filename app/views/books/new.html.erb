@@ -1,6 +1,12 @@
 <div class="box new-book">
   <h3>Add a book</h3>
 
+  <% if @book.errors %>
+    <% @book.errors.full_messages.each do |m| %>
+      <p class="centered"><%= m %></p>
+    <% end %>
+  <% end %>
+
   <%= form_for [@user, @book] do |f| %>
     <%= f.text_field :title, placeholder: 'Title' %>
     <%= f.number_field :pagecount, placeholder: 'Total pages' %>

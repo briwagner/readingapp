@@ -1,5 +1,5 @@
 <div class="box">
-  <h3 class="centered">Edit this reading entry</h3>
+  <h3 class="centered">Edit reading for: <%= @reading.book.title %></h3>
   <%= form_for [@user, @book, @reading] do |f| %>
     <%= f.number_field :startpage, placeholder: "Starting page" %>
     <%= f.label :starttime, 'Start time:' %>

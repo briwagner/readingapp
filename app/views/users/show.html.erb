@@ -8,8 +8,8 @@
     <ul>
       <% @user.books.each do |b| %>
         <h4><%= link_to "#{b.title}", user_book_path(@user, b) %> - <%= b.pagecount %> pages
-          <% if b.current_reading %>
-          - <%= link_to 'Finish reading', edit_user_book_reading_path(@user, b, b.current_reading.first), class: 'btn link-btn' %></h4>
+        <% if b.current_reading %>
+          - <%= link_to 'Finish reading', edit_user_book_reading_path(@user, b, b.readings.last), class: 'btn link-btn' %></h4>
           <% end %>
 
           <% if b.readings.any? %>
@@ -20,6 +20,7 @@
             <li>Start reading!</li>
           <% end %>
 
+<!-- show 'Read it' button unless book is finished -->
           <% if b.readings.any? %>
             <% unless b.last_page_read == b.pagecount %>
               <li><%= link_to 'Read it!', new_user_book_reading_path(@user, b), class: 'btn link-btn' %></li>
