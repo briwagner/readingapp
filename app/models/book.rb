@@ -6,14 +6,20 @@ class Book < ActiveRecord::Base
   validates :pagecount, presence: true
 
   def last_page_read
-    if self.readings.count > 2
-      last_reading = self.readings.max { |a, b| a.endpage <=> b.endpage }
+    all_readings = self.complete_readings
+    if all_readings.count >= 2
+      last_reading = all_readings.max { |a, b| a.endpage <=> b.endpage }
       last_reading.endpage
-    elsif self.readings.count == 1 && self.readings.last.endpage
-      self.readings.last.endpage
+    elsif all_readings.count == 1 && all_readings.last.endpage
+      all_readings.last.endpage
     else
       0
     end
+  end
+
+  def complete_readings
+    all_readings = self.readings.to_a
+    all_readings.keep_if {|b| !b.open_reading?}
   end
 
   def current_reading
